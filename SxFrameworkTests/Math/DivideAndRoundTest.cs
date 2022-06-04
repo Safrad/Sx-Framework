@@ -23,5 +23,10 @@ public class DivideAndRoundTest
     {
         Assert.Equal(result, DivideAndRound.ToNearest(divident, divisor));
     }
-    
+
+    [Fact]
+    public void ArgumentExceptionTest()
+    {
+        Assert.Throws<ArgumentException>(() => DivideAndRound.ToNearest(7, 0));
+    }    
 }
